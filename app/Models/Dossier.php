@@ -19,9 +19,14 @@ class Dossier extends Model
         'statut',
         'client_id',
         'user_id',
+        'date_ouverture', 
+        'date_cloture',
     ];
 
-    
+    protected $casts = [
+        'date_ouverture' => 'date',
+        'date_cloture' => 'date',
+    ];
 
     
     protected static function boot()

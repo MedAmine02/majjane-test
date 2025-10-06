@@ -55,12 +55,12 @@
                                         {{ ucfirst($dossier->type_procedure) }}
                                     </p>
                                 </div>
-                                {{-- <div>
+                                <div>
                                     <label class="text-sm font-medium text-gray-500 dark:text-gray-400">Date d'ouverture</label>
                                     <p class="mt-1 text-sm text-gray-900 dark:text-white">
                                         {{ $dossier->date_ouverture->format('d/m/Y') }}
                                     </p>
-                                </div> --}}
+                                </div>
                                 @if($dossier->date_cloture)
                                 <div>
                                     <label class="text-sm font-medium text-gray-500 dark:text-gray-400">Date de clôture</label>

@@ -59,16 +59,16 @@
 
                             <!-- responsable -->
                             <div>
-                                <x-input-label for="responsable_id" :value="__('Juriste responsable')" />
-                                <select id="responsable_id" name="responsable_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
+                                <x-input-label for="user_id" :value="__('Juriste responsable')" />
+                                <select id="user_id" name="user_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
                                     <option value="">Sélectionner un juriste</option>
                                     @foreach($juristes as $juriste)
-                                        <option value="{{ $juriste->id }}" {{ old('responsable_id') == $juriste->id ? 'selected' : '' }}>
+                                        <option value="{{ $juriste->id }}" {{ old('user_id') == $juriste->id ? 'selected' : '' }}>
                                             {{ $juriste->name }}
                                         </option>
                                     @endforeach
                                 </select>
-                                <x-input-error :messages="$errors->get('responsable_id')" class="mt-2" />
+                                <x-input-error :messages="$errors->get('user_id')" class="mt-2" />
                             </div>
 
                             <!-- description -->
@@ -77,6 +77,20 @@
                                 <textarea id="description" name="description" rows="4" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">{{ old('description') }}</textarea>
                                 <x-input-error :messages="$errors->get('description')" class="mt-2" />
                             </div>
+
+                            <!-- Date d'ouverture -->
+                            <div>
+                                <x-input-label for="date_ouverture" :value="__('Date d\'ouverture')" />
+                                <x-text-input id="date_ouverture" class="block mt-1 w-full" type="date" name="date_ouverture" :value="old('date_ouverture', now()->format('Y-m-d'))" required />
+                                <x-input-error :messages="$errors->get('date_ouverture')" class="mt-2" />
+                            </div>
+
+                            <!-- Date de clôture -->
+                            {{-- <div>
+                                <x-input-label for="date_cloture" :value="__('Date de clôture (si applicable)')" />
+                                <x-text-input id="date_cloture" class="block mt-1 w-full" type="date" name="date_cloture" :value="old('date_cloture')" />
+                                <x-input-error :messages="$errors->get('date_cloture')" class="mt-2" />
+                            </div> --}}
                         </div>
 
                         <div class="flex items-center justify-end mt-6">

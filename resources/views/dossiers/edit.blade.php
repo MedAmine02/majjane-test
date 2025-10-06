@@ -83,8 +83,8 @@
                                 <x-input-error :messages="$errors->get('user_id')" class="mt-2" />
                             </div>
 
-                            <!-- date d'ouverture -->
-                            {{-- <div>
+                             <!-- date d'ouverture -->
+                             <div>
                                 <x-input-label for="date_ouverture" :value="__('Date d\'ouverture')" />
                                 <x-text-input id="date_ouverture" class="block mt-1 w-full" type="date" name="date_ouverture" :value="old('date_ouverture', $dossier->date_ouverture->format('Y-m-d'))" required />
                                 <x-input-error :messages="$errors->get('date_ouverture')" class="mt-2" />
@@ -95,7 +95,7 @@
                                 <x-input-label for="date_cloture" :value="__('Date de clôture (si applicable)')" />
                                 <x-text-input id="date_cloture" class="block mt-1 w-full" type="date" name="date_cloture" :value="old('date_cloture', $dossier->date_cloture ? $dossier->date_cloture->format('Y-m-d') : '')" />
                                 <x-input-error :messages="$errors->get('date_cloture')" class="mt-2" />
-                            </div> --}}
+                            </div> 
 
                             <!-- description -->
                             <div class="md:col-span-2">

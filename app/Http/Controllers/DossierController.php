@@ -47,11 +47,21 @@ class DossierController extends Controller
             'titre' => 'required|string|max:255',
             'type_procedure' => 'required|string',
             'client_id' => 'required|exists:clients,id',
-            'responsable_id' => 'required|exists:users,id',
+            'user_id' => 'required|exists:users,id',
+            'date_ouverture' => 'required|date', 
         ]);
 
-        Dossier::create($request->all());
+        // Dossier::create($request->all());
 
+        Dossier::create([
+            'titre' => $request->titre,
+            'type_procedure' => $request->type_procedure,
+            'client_id' => $request->client_id,
+            'user_id' => $request->user_id, // CHANGER responsable_id → user_id
+            'description' => $request->description,
+            'date_ouverture' => $request->date_ouverture ?? now(), // Date d'aujourd'hui par défaut
+            'statut' => 'en_cours', // Statut par défaut
+        ]);
         return redirect()->route('dossiers.index')->with('success', 'Dossier créé avec succès.');
     }
 
@@ -90,7 +100,9 @@ class DossierController extends Controller
             'type_procedure' => 'required|string',
             'statut' => 'required|string',
             'client_id' => 'required|exists:clients,id',
-            'responsable_id' => 'required|exists:users,id',
+            'user_id' => 'required|exists:users,id',
+            'date_ouverture' => 'required|date',
+            'date_cloture' => 'nullable|date',
         ]);
 
         $dossier->update($request->all());

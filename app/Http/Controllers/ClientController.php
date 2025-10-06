@@ -42,6 +42,9 @@ class ClientController extends Controller
             'email' => 'nullable|email',
             'telephone' => 'nullable|string|max:20',
             'adresse' => 'nullable|string',
+            'type' => 'required|in:particulier,entreprise',
+            'raison_sociale' => 'nullable|string|max:255',
+            'siret' => 'nullable|string|max:14',
         ]);
 
         Client::create($request->all());
@@ -83,6 +86,9 @@ class ClientController extends Controller
             'email' => 'nullable|email',
             'telephone' => 'nullable|string|max:20',
             'adresse' => 'nullable|string',
+            'type' => 'required|in:particulier,entreprise',
+            'raison_sociale' => 'nullable|string|max:255',
+            'siret' => 'nullable|string|max:14',
         ]);
 
         $client->update($request->all());
