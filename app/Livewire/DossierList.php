@@ -33,7 +33,7 @@ class DossierList extends Component
             ($user->isJuriste() && $dossier->user_id == $user->id())) {
             $dossier->update(['statut' => $newStatut]);
             
-            // Émettre un event pour rafraîchir si nécessaire
+            
             $this->dispatch('statusUpdated');
         }
     }

@@ -20,7 +20,7 @@
                         @method('PUT')
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Type de client -->
+                            <!-- type de client -->
                             <div class="md:col-span-2">
                                 <x-input-label for="type" :value="__('Type de client')" />
                                 <select id="type" name="type" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -30,21 +30,21 @@
                                 <x-input-error :messages="$errors->get('type')" class="mt-2" />
                             </div>
 
-                            <!-- Nom -->
+                            <!-- nom -->
                             <div>
                                 <x-input-label for="nom" :value="__('Nom')" />
                                 <x-text-input id="nom" class="block mt-1 w-full" type="text" name="nom" :value="old('nom', $client->nom)" required />
                                 <x-input-error :messages="$errors->get('nom')" class="mt-2" />
                             </div>
 
-                            <!-- Prénom -->
+                            <!-- prénom -->
                             <div id="prenom-field">
                                 <x-input-label for="prenom" :value="__('Prénom')" />
                                 <x-text-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom', $client->prenom)" />
                                 <x-input-error :messages="$errors->get('prenom')" class="mt-2" />
                             </div>
 
-                            <!-- Raison Sociale (entreprise) -->
+                            <!-- raison sociale (entreprise) -->
                             <div id="raison-sociale-field" class="hidden md:col-span-2">
                                 <x-input-label for="raison_sociale" :value="__('Raison Sociale')" />
                                 <x-text-input id="raison_sociale" class="block mt-1 w-full" type="text" name="raison_sociale" :value="old('raison_sociale', $client->raison_sociale)" />
@@ -58,21 +58,21 @@
                                 <x-input-error :messages="$errors->get('siret')" class="mt-2" />
                             </div>
 
-                            <!-- Email -->
+                            <!-- email -->
                             <div class="md:col-span-2">
                                 <x-input-label for="email" :value="__('Email')" />
                                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $client->email)" />
                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
 
-                            <!-- Téléphone -->
+                            <!-- téléphone -->
                             <div>
                                 <x-input-label for="telephone" :value="__('Téléphone')" />
                                 <x-text-input id="telephone" class="block mt-1 w-full" type="text" name="telephone" :value="old('telephone', $client->telephone)" />
                                 <x-input-error :messages="$errors->get('telephone')" class="mt-2" />
                             </div>
 
-                            <!-- Adresse -->
+                            <!-- adresse -->
                             <div class="md:col-span-2">
                                 <x-input-label for="adresse" :value="__('Adresse')" />
                                 <textarea id="adresse" name="adresse" rows="3" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">{{ old('adresse', $client->adresse) }}</textarea>
@@ -104,6 +104,6 @@
         }
 
         document.getElementById('type').addEventListener('change', toggleFields);
-        toggleFields(); // Initial state
+        toggleFields(); // initial state
     </script>
 </x-app-layout>

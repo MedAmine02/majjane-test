@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Admin
+        // admin
         User::create([
             'name' => 'Admin Cabinet',
             'email' => 'admin@cabinet.com',
@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        // Juristes
+        // juristes
         User::create([
             'name' => 'Marie Dubois',
             'email' => 'marie.dubois@cabinet.com',
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        // Assistant
+        // assistant
         User::create([
             'name' => 'Sophie Assistant',
             'email' => 'sophie@cabinet.com',

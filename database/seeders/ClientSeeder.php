@@ -39,7 +39,7 @@ class ClientSeeder extends Seeder
             [
                 'numero_client' => 'CLI003',
                 'nom' => 'Technologie SARL',
-                'prenom' => '', // Vide pour entreprise
+                'prenom' => '', // vide pour entreprise
                 'email' => 'contact@technologie-sarl.com',
                 'telephone' => '01 45 67 89 01',
                 'adresse' => '789 Boulevard des Entreprises, Lille',

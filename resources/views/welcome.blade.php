@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cabinet Juridique - Gestion des Dossiers</title>
         
-        <!-- Chargement de Tailwind CSS depuis CDN en attendant que Vite fonctionne -->
+    
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         
@@ -15,7 +15,7 @@
             }
         </style>
         
-        <!-- Essayer aussi de charger via Vite -->
+        
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased bg-gray-50">
@@ -23,7 +23,7 @@
             <div class="max-w-6xl w-full">
                 <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
                     <div class="md:flex">
-                        <!-- Partie gauche -->
+                        <!-- partie gauche -->
                         <div class="md:flex-1 p-8 md:p-12">
                             <div class="flex items-center mb-8">
                                 <div class="bg-blue-600 text-white p-3 rounded-lg mr-4">
@@ -86,7 +86,7 @@
                                 @endif
                             </div>
 
-                            <!-- Informations de test -->
+                            <!-- informations de test -->
                             <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
                                 <h4 class="text-sm font-semibold text-blue-800 mb-2">Comptes de démonstration :</h4>
                                 <div class="text-xs text-blue-700 space-y-1">
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         
-                        <!-- Partie droite -->
+                        <!-- partie droite -->
                         <div class="md:flex-1 bg-gradient-to-br from-blue-600 to-blue-800 p-8 md:p-12 text-white">
                             <h3 class="text-xl font-semibold mb-8">Accès par Rôle</h3>
                             <div class="space-y-6">
@@ -138,7 +138,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Statistiques -->
+                            <!-- statistiques -->
                             <div class="mt-8 pt-6 border-t border-white border-opacity-20">
                                 <h4 class="font-semibold mb-4">Notre Plateforme</h4>
                                 <div class="grid grid-cols-2 gap-4 text-center">
@@ -156,7 +156,7 @@
                     </div>
                 </div>
                 
-                <!-- Footer -->
+                <!-- footer -->
                 <div class="text-center mt-6">
                     <p class="text-gray-500 text-sm">
                         &copy; {{ date('Y') }} Cabinet Juridique. Tous droits réservés.

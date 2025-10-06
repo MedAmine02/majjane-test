@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // Définir des Gates supplémentaires pour les rôles
+        
         Gate::define('access-reports', function ($user) {
             return $user->isAdmin() || $user->isJuriste();
         });

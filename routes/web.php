@@ -19,23 +19,22 @@ Route::view('profile', 'profile')
 
 
 Route::middleware(['auth'])->group(function () {
-    // Dashboard avec statistiques
+    // dashboard avec statistiques
     Route::get('/dashboard-stats', [DashboardController::class, 'index'])->name('dashboard.stats');
     
-    // Clients
+    // clients
     Route::resource('clients', ClientController::class);
     
-    // Dossiers
+    // fossiers
     Route::resource('dossiers', DossierController::class);
     Route::post('/dossiers/{dossier}/status', [DossierController::class, 'updateStatus'])->name('dossiers.updateStatus');
     
-    // Documents
+    // documents
     Route::post('/dossiers/{dossier}/documents', [DocumentController::class, 'store'])->name('documents.store');
     Route::delete('/documents/{document}', [DocumentController::class, 'destroy'])->name('documents.destroy');
     Route::get('/documents/{document}/download', [DocumentController::class, 'download'])->name('documents.download');
 });
 
-// Les routes d'authentification sont déjà dans auth.php, ne les duplique pas !
 require __DIR__.'/auth.php';
 
 

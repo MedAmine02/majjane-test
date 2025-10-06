@@ -20,14 +20,14 @@
                         @method('PUT')
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Titre -->
+                            <!-- titre -->
                             <div class="md:col-span-2">
                                 <x-input-label for="titre" :value="__('Titre du dossier')" />
                                 <x-text-input id="titre" class="block mt-1 w-full" type="text" name="titre" :value="old('titre', $dossier->titre)" required autofocus />
                                 <x-input-error :messages="$errors->get('titre')" class="mt-2" />
                             </div>
 
-                            <!-- Client -->
+                            <!-- client -->
                             <div>
                                 <x-input-label for="client_id" :value="__('Client')" />
                                 <select id="client_id" name="client_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -44,7 +44,7 @@
                                 <x-input-error :messages="$errors->get('client_id')" class="mt-2" />
                             </div>
 
-                            <!-- Type de procédure -->
+                            <!-- type de procédure -->
                             <div>
                                 <x-input-label for="type_procedure" :value="__('Type de procédure')" />
                                 <select id="type_procedure" name="type_procedure" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -58,7 +58,7 @@
                                 <x-input-error :messages="$errors->get('type_procedure')" class="mt-2" />
                             </div>
 
-                            <!-- Statut -->
+                            <!-- statut -->
                             <div>
                                 <x-input-label for="statut" :value="__('Statut')" />
                                 <select id="statut" name="statut" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -69,7 +69,7 @@
                                 <x-input-error :messages="$errors->get('statut')" class="mt-2" />
                             </div>
 
-                            <!-- Responsable -->
+                            <!-- responsable -->
                             <div>
                                 <x-input-label for="user_id" :value="__('Juriste responsable')" />
                                 <select id="user_id" name="user_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -83,21 +83,21 @@
                                 <x-input-error :messages="$errors->get('user_id')" class="mt-2" />
                             </div>
 
-                            <!-- Date d'ouverture -->
+                            <!-- date d'ouverture -->
                             {{-- <div>
                                 <x-input-label for="date_ouverture" :value="__('Date d\'ouverture')" />
                                 <x-text-input id="date_ouverture" class="block mt-1 w-full" type="date" name="date_ouverture" :value="old('date_ouverture', $dossier->date_ouverture->format('Y-m-d'))" required />
                                 <x-input-error :messages="$errors->get('date_ouverture')" class="mt-2" />
                             </div>
 
-                            <!-- Date de clôture -->
+                            <!-- date de clôture -->
                             <div>
                                 <x-input-label for="date_cloture" :value="__('Date de clôture (si applicable)')" />
                                 <x-text-input id="date_cloture" class="block mt-1 w-full" type="date" name="date_cloture" :value="old('date_cloture', $dossier->date_cloture ? $dossier->date_cloture->format('Y-m-d') : '')" />
                                 <x-input-error :messages="$errors->get('date_cloture')" class="mt-2" />
                             </div> --}}
 
-                            <!-- Description -->
+                            <!-- description -->
                             <div class="md:col-span-2">
                                 <x-input-label for="description" :value="__('Description')" />
                                 <textarea id="description" name="description" rows="4" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">{{ old('description', $dossier->description) }}</textarea>

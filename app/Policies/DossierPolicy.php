@@ -8,110 +8,110 @@ use Illuminate\Auth\Access\Response;
 
 class DossierPolicy
 {
-   /**
-     * Déterminer qui peut voir tous les dossiers
-     */
+   
+    //   déterminer qui peut voir tous les dossiers
+     
     public function viewAny(User $user): bool
     {
-        // Admin et Juriste peuvent voir tous les dossiers
+        // admin et juriste peuvent voir tous les dossiers
         return $user->isAdmin() || $user->isJuriste();
     }
 
-    /**
-     * Déterminer qui peut voir un dossier spécifique
-     */
+    
+    //   déterminer qui peut voir un dossier spécifique
+     
     public function view(User $user, Dossier $dossier): bool
     {
-        // Admin peut tout voir
+        // admin peut tout voir
         if ($user->isAdmin()) {
             return true;
         }
 
-        // Juriste peut voir seulement ses dossiers assignés
+        // juriste peut voir seulement ses dossiers assignés
         if ($user->isJuriste()) {
             return $dossier->responsable_id === $user->id;
         }
 
-        // Assistant peut voir seulement les dossiers (lecture seule)
+        // assistant peut voir seulement les dossiers (lecture seule)
         if ($user->isAssistant()) {
-            return true; // ou des restrictions plus spécifiques si besoin
+            return true; 
         }
 
         return false;
     }
 
-    /**
-     * Déterminer qui peut créer des dossiers
-     */
+    
+    //   déterminer qui peut créer des dossiers
+     
     public function create(User $user): bool
     {
-        // Seuls Admin et Juriste peuvent créer des dossiers
+        // Seuls admin et juriste peuvent créer des dossiers
         return $user->isAdmin() || $user->isJuriste();
     }
 
-    /**
-     * Déterminer qui peut modifier un dossier
-     */
+    
+    //   déterminer qui peut modifier un dossier
+     
     public function update(User $user, Dossier $dossier): bool
     {
-        // Admin peut tout modifier
+        // admin peut tout modifier
         if ($user->isAdmin()) {
             return true;
         }
 
-        // Juriste peut modifier seulement ses dossiers assignés
+        // juriste peut modifier seulement ses dossiers assignés
         if ($user->isJuriste()) {
             return $dossier->responsable_id === $user->id;
         }
 
-        // Assistant ne peut pas modifier
+        // assistant ne peut pas modifier
         return false;
     }
 
-    /**
-     * Déterminer qui peut supprimer un dossier
-     */
+    
+    //   déterminer qui peut supprimer un dossier
+     
     public function delete(User $user, Dossier $dossier): bool
     {
-        // Seul l'admin peut supprimer des dossiers
+        // seul l'admin peut supprimer des dossiers
         return $user->isAdmin();
     }
 
-    /**
-     * Déterminer qui peut changer le statut d'un dossier
-     */
+    
+    //   déterminer qui peut changer le statut d'un dossier
+     
     public function changeStatus(User $user, Dossier $dossier): bool
     {
-        // Admin peut changer tous les statuts
+        // admin peut changer tous les statuts
         if ($user->isAdmin()) {
             return true;
         }
 
-        // Juriste peut changer le statut de ses dossiers assignés
+        // juriste peut changer le statut de ses dossiers assignés
         if ($user->isJuriste()) {
             return $dossier->responsable_id === $user->id;
         }
 
-        // Assistant ne peut pas changer les statuts
+        // assistant ne peut pas changer les statuts
         return false;
     }
 
-    /**
-     * Déterminer qui peut uploader des documents
-     */
+    
+    //   déterminer qui peut uploader des documents
+     
     public function uploadDocuments(User $user, Dossier $dossier): bool
     {
-        // Admin peut uploader sur tous les dossiers
+        // admin peut uploader sur tous les dossiers
         if ($user->isAdmin()) {
             return true;
         }
 
-        // Juriste peut uploader sur ses dossiers assignés
+        // juriste peut uploader sur ses dossiers assignés
         if ($user->isJuriste()) {
             return $dossier->responsable_id === $user->id;
         }
 
-        // Assistant peut uploader (lecture/écriture limitée)
+        // assistant peut uploader (lecture/écriture limitée)
         if ($user->isAssistant()) {
             return true;
         }

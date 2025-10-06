@@ -20,9 +20,7 @@ class Client extends Model
         
     ];
 
-    /**
-     * Relation avec les dossiers
-     */
+   
     public function dossiers(): HasMany
     {
         return $this->hasMany(Dossier::class);

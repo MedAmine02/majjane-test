@@ -25,9 +25,9 @@
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Informations du dossier -->
+                <!-- informations du dossier -->
                 <div class="lg:col-span-2 space-y-6">
-                    <!-- Carte Informations Générales -->
+                    <!-- carte informations générales -->
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
                             <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
 
-                    <!-- Carte Client -->
+                    <!-- carte client -->
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
                             <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
@@ -122,9 +122,9 @@
                     </div>
                 </div>
 
-                <!-- Sidebar -->
+                <!-- sidebar -->
                 <div class="space-y-6">
-                    <!-- Carte Responsable -->
+                    <!-- carte responsable -->
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
                             <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
@@ -148,7 +148,7 @@
                         </div>
                     </div>
 
-                    <!-- Carte Documents -->
+                    <!-- carte documents -->
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
                             <div class="flex justify-between items-center mb-4">
@@ -163,7 +163,7 @@
                                 @endcan
                             </div>
 
-                            <!-- Formulaire d'upload (caché par défaut) -->
+                            <!-- formulaire d'upload (caché par défaut) -->
                             @can('uploadDocuments', $dossier)
                             <div id="document-upload" class="hidden mb-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                                 <form method="POST" action="{{ route('documents.store', $dossier) }}" enctype="multipart/form-data">

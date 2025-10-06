@@ -1,7 +1,7 @@
 <div>
-    <!-- Barre de recherche et filtres -->
+    <!-- barre de recherche et filtres -->
     <div class="mb-6 space-y-4 md:space-y-0 md:flex md:space-x-4">
-        <!-- Recherche -->
+        <!-- recherche -->
         <div class="flex-1 mb-6">
             <input 
                 type="text" 
@@ -11,7 +11,7 @@
             >
         </div>
 
-        <!-- Filtre Statut -->
+        <!-- filtre statut -->
         <select wire:model.live="statutFilter" class="w-48 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-700">
             <option value="">Tous les statuts</option>
             <option value="en_cours">En Cours</option>
@@ -19,7 +19,7 @@
             <option value="suspendu">Suspendu</option>
         </select>
 
-        <!-- Filtre Juriste -->
+        <!-- filtre juriste -->
         @auth
             @if(auth()->user()->isAdmin())
                 <select wire:model.live="juristeFilter" class="w-48 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-700">
@@ -32,7 +32,7 @@
         @endauth
     </div>
 
-    <!-- Tableau des dossiers -->
+    <!-- tableau des dossiers -->
     <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg overflow-hidden">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -112,7 +112,7 @@
             </table>
         </div>
 
-        <!-- Pagination -->
+        <!-- pagination -->
         <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700">
             {{ $dossiers->links() }}
         </div>

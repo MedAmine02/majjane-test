@@ -1,6 +1,6 @@
 {{--  --}}
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-    <!-- Total Dossiers -->
+    <!-- total dossiers -->
     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6">
             <div class="flex items-center">
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <!-- Dossiers en cours -->
+    <!-- dossiers en cours -->
     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6">
             <div class="flex items-center">
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <!-- Dossiers Clôturés -->
+    <!-- dossiers clôturés -->
     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6">
             <div class="flex items-center">
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <!-- Clients Actifs -->
+    <!-- clients actifs -->
     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6">
             <div class="flex items-center">

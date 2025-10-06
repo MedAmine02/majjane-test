@@ -18,15 +18,12 @@ class Dossier extends Model
         'type_procedure',
         'statut',
         'client_id',
-        // 'responsable_id'
         'user_id',
     ];
 
     
 
-    /**
-     * Boot du modèle pour générer la référence automatiquement
-     */
+    
     protected static function boot()
     {
         parent::boot();

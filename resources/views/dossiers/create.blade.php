@@ -19,14 +19,14 @@
                         @csrf
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Titre -->
+                            <!-- titre -->
                             <div class="md:col-span-2">
                                 <x-input-label for="titre" :value="__('Titre du dossier')" />
                                 <x-text-input id="titre" class="block mt-1 w-full" type="text" name="titre" :value="old('titre')" required autofocus />
                                 <x-input-error :messages="$errors->get('titre')" class="mt-2" />
                             </div>
 
-                            <!-- Client -->
+                            <!-- client -->
                             <div>
                                 <x-input-label for="client_id" :value="__('Client')" />
                                 <select id="client_id" name="client_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -43,7 +43,7 @@
                                 <x-input-error :messages="$errors->get('client_id')" class="mt-2" />
                             </div>
 
-                            <!-- Type de procédure -->
+                            <!-- type de procédure -->
                             <div>
                                 <x-input-label for="type_procedure" :value="__('Type de procédure')" />
                                 <select id="type_procedure" name="type_procedure" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -57,7 +57,7 @@
                                 <x-input-error :messages="$errors->get('type_procedure')" class="mt-2" />
                             </div>
 
-                            <!-- Responsable -->
+                            <!-- responsable -->
                             <div>
                                 <x-input-label for="responsable_id" :value="__('Juriste responsable')" />
                                 <select id="responsable_id" name="responsable_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
@@ -71,7 +71,7 @@
                                 <x-input-error :messages="$errors->get('responsable_id')" class="mt-2" />
                             </div>
 
-                            <!-- Description -->
+                            <!-- description -->
                             <div class="md:col-span-2">
                                 <x-input-label for="description" :value="__('Description')" />
                                 <textarea id="description" name="description" rows="4" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">{{ old('description') }}</textarea>
